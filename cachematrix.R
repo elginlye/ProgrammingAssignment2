@@ -14,19 +14,19 @@ makeCacheMatrix <- function(x = matrix()) {
     ## define variable m to store the cached matrix
     m <- NULL    
     
-    ## assign variables x,m in the parent env to y & NULL respectively
+    ## 1st func, assigns variables x,m in the parent env to y & NULL respectively
     set <- function(y) {
         x <<- y
         m <<- NULL
     }
     
-    ## return variable x defined in parent env, i.e. func makeCacheMatrix 
+    ## 2nd func, return variable x defined in parent env, i.e. func makeCacheMatrix 
     get <- function() x
     
-    ## assign m (in parent env) to passed-in variable matrix
+    ## 3rd func, assign m (in parent env) to passed-in variable matrix
     setMatrix <- function(matrix) m <<- matrix
     
-    ## returns m defined in parent env
+    ## 4th func, returns m defined in parent env
     getMatrix <- function() m
     
     ## create a list of 4 members, each member is assigned to 1 of the 4 functions
