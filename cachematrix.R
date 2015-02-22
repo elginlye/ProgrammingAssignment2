@@ -6,7 +6,7 @@
 
 
 ## func makeCacheMatrix  
-## - takes in 1 input parameter, matrix x 
+## - takes in 1 argument, matrix x 
 ## - defines a variable m to store the cached matrix
 ## - defines 4 funcs: set, get, setMatrix, getMatrix
 ## - returns a vector containing these 4 funcs  
@@ -14,16 +14,17 @@ makeCacheMatrix <- function(x = matrix()) {
     ## define variable m to store the cached matrix
     m <- NULL    
     
-    ## 1st func, assigns variables x,m in the parent env to y & NULL respectively
+    ## 1st func, assigns variables x & m in the parent env (func makeCacheMatrix), 
+    ## to argument y & NULL respectively
     set <- function(y) {
         x <<- y
         m <<- NULL
     }
     
-    ## 2nd func, return variable x defined in parent env, i.e. func makeCacheMatrix 
+    ## 2nd func, return variable x defined in parent env (func makeCacheMatrix) 
     get <- function() x
     
-    ## 3rd func, assign m (in parent env) to passed-in variable matrix
+    ## 3rd func, assign m (in parent env) to argument matrix
     setMatrix <- function(matrix) m <<- matrix
     
     ## 4th func, returns m defined in parent env
@@ -37,7 +38,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## func cacheSolve 
-## - defines input parameter x, (x is to be created by makeCacheMatrix)
+## - defines argument x, (x is to be created by makeCacheMatrix)
 ## - returns the cached value if previous computation exists, 
 ##   otherwise compute the inverse & assign it to variable m and
 ##   returns the inverse   
